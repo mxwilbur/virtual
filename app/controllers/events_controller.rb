@@ -1,14 +1,15 @@
 class EventsController < ApplicationController
 
-
-  def index
-    @events = Event.all
-    @photos = Photo.new
-
+  def initialized
+    @events = Event.new
   end
+  
   
   def new
     @events = Event.new
-    @photos = Photo.new
+  end
+
+  def index
+    @events = Event.all
   end
 end
