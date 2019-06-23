@@ -18,6 +18,10 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
 
+  private
+
   def event_params
-    params.require(.event).permit(:name, :description, :contact)
+    params.require(:event).permit(:name, :description, :contact)
+  end
+
 end
