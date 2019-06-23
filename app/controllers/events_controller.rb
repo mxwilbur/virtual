@@ -12,4 +12,12 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
   end
+
+  def create
+    if @event.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 end
