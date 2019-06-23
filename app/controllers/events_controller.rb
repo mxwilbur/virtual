@@ -14,10 +14,10 @@ class EventsController < ApplicationController
   end
 
   def create
-    if @event.valid?
-      redirect_to root_path
-    else
-      render :new, status: :unprocessable_entity
-    end
+    Event.create(event_params)
+    redirect_to root_path
   end
+
+  def event_params
+    params.require(.event).permit(:name, :description, :contact)
 end
