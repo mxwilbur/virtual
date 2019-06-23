@@ -8,13 +8,12 @@
   </ul>
 </div>
 
+<%= @events.each do |event| %>
+  <div class="booyah-box col-10 offset-1">
+    <h1><%= event.name %></h1>
+    <p> <%= event.description %></p><br /><br />
+    <p><%= event.benefit %></p><br />
+  </div>
 
-<!--
- <p class="about">
-  <u>You can use this site to</u>: <br />
-  * Advertise your virtual events <br />
-  * Sell to participants <br />
-  * Collect fees from participants <br />
-  * Show results, current and historical
-</p>
--->
+<% end %>
+
